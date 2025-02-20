@@ -1,3 +1,5 @@
+document.head.innerHTML += '<link rel="stylesheet" href="https://FarAway6834.github.io/promptNote/char.css"'>
+
 document.addEventListener("DOMContentLoaded", () => {
     class Usr extends HTMLElement {
         connectedCallback() {
