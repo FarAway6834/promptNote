@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
     
-    customElements.define("usr", Usr);
-    customElements.define("gpt", GPT);
-    customElements.define("chat", Chat);
+    customElements.define("u-sr", Usr);
+    customElements.define("g-pt", GPT);
+    customElements.define("c-hat", Chat);
 });
