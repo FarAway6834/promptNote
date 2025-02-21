@@ -3,7 +3,7 @@ document.head.innerHTML += '<link rel="stylesheet" href="https://FarAway6834.git
 document.addEventListener("DOMContentLoaded", () => {
     class Usr extends HTMLElement {
         connectedCallback() {
-            this.innerHTML = `
+            this.outerHTML = `
                 <div class="message-container right">
                     <div class="message right">${this.innerHTML}</div>
                     <img class="profile-img" src="https://cdn-icons-png.flaticon.com/512/2815/2815428.png" alt="User">
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     class GPT extends HTMLElement {
         connectedCallback() {
-            this.innerHTML = `
+            this.outerHTML = `
                 <div class="message-container left">
                     <img class="profile-img" src="https://img.icons8.com/fluent/512/chatgpt--v2.png" alt="ChatGPT">
                     <div class="message left">${this.innerHTML}</div>
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const placeholder = this.getAttribute("placeholder") || "Type a message...";
             const sendButton = this.getAttribute("send-button") || "Send";
             
-            this.innerHTML = `
+            this.outerHTML = `
                 <div class="chat-container">
                     <div class="chat-header">${name}</div>
                     <div class="chat-messages">${this.innerHTML}</div>
