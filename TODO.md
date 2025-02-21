@@ -48,7 +48,7 @@ example.yaml
 }
 ```
 
-# PyPI promptNote pkg : *.chtoml / *.chyaml / .chyaml --yamlconf_only_flag / .conform (set yamlconf_only_flag as false if not seted.)
+# PyPI promptNote pkg : *.chtoml / *.chyaml / .chyaml --yamlconf_only_flag / .conform (set yamlconf_only_flag as false if not seted.) (--smartyaml can be)
 ```toml
 [project-name]
 yamlconf_only_flag = false #must be set 4 fasts
