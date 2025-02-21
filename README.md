@@ -8,3 +8,8 @@ make gpt prompt note solution
  - [stylesheet is auto included](https://FarAway6834.github.io/promptNote/chat.css)
 
 ## [testpage](./demo)
+
+## [cht.js to md using by github.io](https://faraway6834.github.io/promptNote/cht.js)
+
+ - stable way : `<script defer src="https://faraway6834.github.io/promptNote/cht.js"></script>`
+ - un stable way : `<script defer src="http://pmpt.kro.kr"></script>`
