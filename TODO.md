@@ -68,3 +68,7 @@ smartyaml / smartoml : additional href value field without href k-v
 
 # `RED | BLUE >_` redblue.htm
 set chtoml/chyaml file gui editor
+
+1. make chat window
+2. button text input
+3. edit
