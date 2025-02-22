@@ -1,2 +1,2 @@
-u-sr : usr-said    *promptNote
-g-pt : gpt-said    *promptNote
+u-sr : usr_said    *promptNote
+g-pt : gpt_said    *promptNote
