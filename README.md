@@ -15,3 +15,5 @@ make gpt prompt note solution
 
  - stable way : `<script defer src="https://faraway6834.github.io/promptNote/cht.js"></script>`
  - un stable way : `<script defer src="http://pmpt.kro.kr"></script>`
+
+## [my prj plan that todo.md 24.2.21~](./TODO)
