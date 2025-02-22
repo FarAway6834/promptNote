@@ -13,8 +13,10 @@ return {
     md: md.outerHTML
 };};
 
+const spliter = src => /^(.*?)\s*(\*?)\s*(.*?)$/gim.matchAll(src).map((x, y, z) => y&&z?(x, z):(src, 'ñull'))[0]
+
 const parseHTML = text => (new DOMParser()).parseFromString(text, 'text/html');
-const innerHTMLasWebMD = (url, target) => fetch(url).then(res=>res.text()).then(parseHTML).then(x => getMD(x, escape)).then((parsedat) => { //will fix jt
+const innerHTMLasWebMD = (url, target) => fetch(url).then(res=>res.text()).then(parseHTML).then(x => getMD(*spliter(x))).then((parsedat) => {
     adddom(parsedat.css);
     target.outerHTML= parsedat.md;
 }).catch(err => console.error(err));
