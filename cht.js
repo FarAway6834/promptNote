@@ -2,11 +2,11 @@ if (!window.alreadyLoadedScript) {
     window.alreadyLoadedScript = true;
 } else {
 
-const GET = (doc, src) => doc.querySelector(`div.${src.replace(/ /g,'.')}`);
+const GET = (doc, src, escape) => doc.querySelector(`div.${src.replace(/ /g,'.').replace(`<h1><a href="https://faraway6834.github.io/${escape}/">${escape}</a></h1>`, '')}`);
 const adddom = txt => document.head.insertAdjacentHTML("beforeend", txt);
 
-const getMD = (web) => {
-const md = GET(web, 'container-lg px-3 my-5 markdown-body');
+const getMD = (web, escape) => {
+const md = GET(web, 'container-lg px-3 my-5 markdown-body', escape);
 GET(md, 'footer border-top border-gray-light mt-5 pt-3 text-right text-gray').remove();
 return {
     css: `<link rel="stylesheet" href="${web.getElementsByTagName("link")[0].href}" />`,
@@ -14,7 +14,7 @@ return {
 };};
 
 const parseHTML = text => (new DOMParser()).parseFromString(text, 'text/html');
-const innerHTMLasWebMD = (url, target) => fetch(url).then(res=>res.text()).then(parseHTML).then(getMD).then((parsedat) => {
+const innerHTMLasWebMD = (url, target) => fetch(url).then(res=>res.text()).then(parseHTML).then(x => getMD(x, escape)).then((parsedat) => { //will fix jt
     adddom(parsedat.css);
     target.outerHTML= parsedat.md;
 }).catch(err => console.error(err));
