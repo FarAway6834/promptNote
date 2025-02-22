@@ -10,7 +10,7 @@ const md = GET(web, 'container-lg px-3 my-5 markdown-body', escape);
 GET(md, 'footer border-top border-gray-light mt-5 pt-3 text-right text-gray').remove();
 return {
     css: `<link rel="stylesheet" href="${web.getElementsByTagName("link")[0].href}" />`,
-    md: md.outerHTML
+    md: md.innerHTML
 };};
 
 const spliter = src => /^(.*?)\s*(\*?)\s*(.*?)$/gim.matchAll(src).map((x, y, z) => y&&z?(x, z):(src, 'ñull'))[0]
