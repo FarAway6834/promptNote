@@ -2,17 +2,17 @@
 
  - [demo2](./demo2)
  > ##### subfiles
- > - [usr-said](./usr-said)
- > - [gpt-said](./gpt-said)
+ > - [usr-said](./usr_said)
+ > - [gpt-said](./gpt_said)
  - demo3 (not deved)
  > ##### subfiles
- > - [usr-said](./usr-said)
- > - [gpt-said](./gpt-said)
+ > - [usr-said](./usr_said)
+ > - [gpt-said](./gpt_said)
  > - [demo3.toml](./demo3.toml)
  - demo4 (not deved)
  > ##### subfiles
- > - [usr-said](./usr-said)
- > - [gpt-said](./gpt-said)
+ > - [usr-said](./usr_said)
+ > - [gpt-said](./gpt_said)
  > - [demo4.toml](./demo4.toml)
  > - [demo4.yaml](./demo4.yaml)
  - [demo5](./demo5)
