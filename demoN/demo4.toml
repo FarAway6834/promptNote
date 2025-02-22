@@ -1,0 +1,3 @@
+[demo4]
+    yamlconf_only_flag = "./demo4.yaml"
+    href = "./talk.ptn"
