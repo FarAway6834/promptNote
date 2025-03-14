@@ -1,4 +1,4 @@
-if (!window.alreadyLoadedScript) {
+if (window.alreadyLoadedScript !== true) {
     window.alreadyLoadedScript = true;
 } else {
 
