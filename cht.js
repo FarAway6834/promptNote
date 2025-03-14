@@ -21,7 +21,7 @@ if (window.alreadyLoadedScript !== true) {
         };
     };
 
-    const spliter = src => [...src.matchAll(/^(.*?)\s*(\*?)\s*(.*?)$/gim)].map((x, y, z) => y&&z?(x, z):(src, 'ñull'))[0]
+    const spliter = src => [...src.matchAll(/^(.*?)\s*(\*?)\s*(.*?)$/gim)].map(([all, x, y, z]) => y!==''&&z!==''?[x, z]:[src, 'ñull'])[0]
 
     const parseHTML = text => (new DOMParser()).parseFromString(text, 'text/html');
     const innerHTMLasWebMD = (url, target) => fetch(url).then(res=>res.text()).then(parseHTML).then(x => getMD(...spliter(x))).then((parsedat) => {
