@@ -4,7 +4,10 @@ if (window.alreadyLoadedScript !== true) {
 
     const hostername = window.location.hostname.split()[-3];
     const GETs_thatURL = escape => `<h1><a href="https://${hostername}.github.io/${escape}/">${escape}</a></h1>`;
-    const GET = (doc, src, escape) => doc.querySelector(`div.${src.replace(/ /g,'.').replace(GETs_thatURL(escape), '')}`);
+    const GETs_req_resrc__spacereg = / /g;
+    const GETs_req_resrc__dotstr = '.';
+    const GETs_req_resrc__emptystr = '';
+    const GET = (doc, src, escape) => doc.querySelector(`div.${src.replace(GETs_req_resrc__spacereg,GETs_req_resrc__dotstr).replace(GETs_thatURL(escape),GETs_req_resrc__emptystr)}`);
     const adddom = txt => document.head.insertAdjacentHTML("beforeend", txt); //summary : append element to header
 
     const getMD = (web, escape) => {
