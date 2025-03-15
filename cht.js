@@ -2,8 +2,8 @@ if (window.alreadyLoadedScript !== true) {
     window.alreadyLoadedScript = true;
 } else {
 
-    //const 
-    const GET = (doc, src, escape) => doc.querySelector(`div.${src.replace(/ /g,'.').replace(`<h1><a href="https://faraway6834.github.io/${escape}/">${escape}</a></h1>`, '')}`);
+    const GETs_thatURL = escape => `<h1><a href="https://faraway6834.github.io/${escape}/">${escape}</a></h1>`;
+    const GET = (doc, src, escape) => doc.querySelector(`div.${src.replace(/ /g,'.').replace(GETs_thatURL(escape), '')}`);
     const adddom = txt => document.head.insertAdjacentHTML("beforeend", txt); //summary : append element to header
 
     const getMD = (web, escape) => {
