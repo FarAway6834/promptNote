@@ -4,15 +4,15 @@ if (window.alreadyLoadedScript !== true) {
 
     const hostername = window.location.hostname.split()[-3];
     const GETs_thatURL = escape => `<h1><a href="https://${hostername}.github.io/${escape}/">${escape}</a></h1>`;
-    const GETs_req_resrc__spacereg = / /g;
-    const GETs_req_resrc__dotstr = '.';
+    /*const GETs_req_resrc__spacereg = / /g;
+    const GETs_req_resrc__dotstr = '.';*/
     const GETs_req_resrc__emptystr = '';
-    const GETs_core = (src, escape) => src.replace(GETs_req_resrc__spacereg,GETs_req_resrc__dotstr).replace(GETs_thatURL(escape),GETs_req_resrc__emptystr);
-    const GET = (doc, src, escape) => doc.querySelector(`div.${GETs_core(src, escape)}`);
+    /*const GETs_core = (src, escape) => src.replace(GETs_req_resrc__spacereg,GETs_req_resrc__dotstr).replace(GETs_thatURL(escape),GETs_req_resrc__emptystr);
+    const GET = (doc, src, escape) => doc.querySelector(`div.${GETs_core(src, escape)}`);*/
     const adddom = txt => document.head.insertAdjacentHTML("beforeend", txt); //summary : append element to header
 
     const getMD = (web, escape) => {
-        const md = GET(
+        /*const md = GET(
             web,
             'container-lg px-3 my-5 markdown-body',
             escape
@@ -20,7 +20,10 @@ if (window.alreadyLoadedScript !== true) {
         GET(
             md,
            'footer border-top border-gray-light mt-5 pt-3 text-right text-gray'
-        ).remove();
+        ).remove();*/
+        const md = web.querySelector('container-lg px-3 my-5 markdown-body');
+        md.querySelector('footer border-top border-gray-light mt-5 pt-3 text-right text-gray').remove();
+        md.innerHTML = md.innerHTML.replace(GETs_thatURL(escape), GETs_req_resrc__emptystr);
         return {
             css: `<link rel="stylesheet" href="${web.getElementsByTagName("link")[0].href}" />`,
             md: md.innerHTML
