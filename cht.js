@@ -2,7 +2,7 @@ if (window.alreadyLoadedScript !== true) {
     window.alreadyLoadedScript = true;
 } else {
 
-    const 
+    //const 
     const GET = (doc, src, escape) => doc.querySelector(`div.${src.replace(/ /g,'.').replace(`<h1><a href="https://faraway6834.github.io/${escape}/">${escape}</a></h1>`, '')}`);
     const adddom = txt => document.head.insertAdjacentHTML("beforeend", txt); //summary : append element to header
 
