@@ -7,7 +7,8 @@ if (window.alreadyLoadedScript !== true) {
     const GETs_req_resrc__spacereg = / /g;
     const GETs_req_resrc__dotstr = '.';
     const GETs_req_resrc__emptystr = '';
-    const GET = (doc, src, escape) => doc.querySelector(`div.${src.replace(GETs_req_resrc__spacereg,GETs_req_resrc__dotstr).replace(GETs_thatURL(escape),GETs_req_resrc__emptystr)}`);
+    const GETs_core = (src, escape) => src.replace(GETs_req_resrc__spacereg,GETs_req_resrc__dotstr).replace(GETs_thatURL(escape),GETs_req_resrc__emptystr);
+    const GET = (doc, src, escape) => doc.querySelector(`div.${GETs_core(src, escape)}`);
     const adddom = txt => document.head.insertAdjacentHTML("beforeend", txt); //summary : append element to header
 
     const getMD = (web, escape) => {
