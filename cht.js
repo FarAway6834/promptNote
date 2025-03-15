@@ -10,7 +10,9 @@ if (window.alreadyLoadedScript !== true) {
     /*const GETs_core = (src, escape) => src.replace(GETs_req_resrc__spacereg,GETs_req_resrc__dotstr).replace(GETs_thatURL(escape),GETs_req_resrc__emptystr);
     const GET = (doc, src, escape) => doc.querySelector(`div.${GETs_core(src, escape)}`);*/
     const adddom = txt => document.head.insertAdjacentHTML("beforeend", txt); //summary : append element to header
-
+    
+    const cssv = url => `<link rel="stylesheet" href="${url}" />`;
+    
     const getMD = (web, escape) => {
         /*const md = GET(
             web,
@@ -25,7 +27,7 @@ if (window.alreadyLoadedScript !== true) {
         md.querySelector('footer border-top border-gray-light mt-5 pt-3 text-right text-gray').remove();
         md.innerHTML = md.innerHTML.replace(GETs_thatURL(escape), GETs_req_resrc__emptystr);
         return {
-            css: `<link rel="stylesheet" href="${web.getElementsByTagName("link")[0].href}" />`,
+            css: cssv(web.getElementsByTagName("link")[-1].href),
             md: md.innerHTML
         };
     };
