@@ -2,8 +2,9 @@ if (window.alreadyLoadedScript !== true) {
     window.alreadyLoadedScript = true;
 } else {
 
+    const 
     const GET = (doc, src, escape) => doc.querySelector(`div.${src.replace(/ /g,'.').replace(`<h1><a href="https://faraway6834.github.io/${escape}/">${escape}</a></h1>`, '')}`);
-    const adddom = txt => document.head.insertAdjacentHTML("beforeend", txt);
+    const adddom = txt => document.head.insertAdjacentHTML("beforeend", txt); //summary : append element to header
 
     const getMD = (web, escape) => {
         const md = GET(
@@ -23,11 +24,15 @@ if (window.alreadyLoadedScript !== true) {
 
     const spliter = src => [...src.matchAll(/^(.*?)\s*(\*?)\s*(.*?)$/gim)].map(([all, x, y, z]) => y!==''&&z!==''?[x, z]:[src, 'ñull'])[0]
 
-    const parseHTML = text => (new DOMParser()).parseFromString(text, 'text/html');
-    const innerHTMLasWebMD = (url, target) => fetch(url).then(res=>res.text()).then(parseHTML).then(x => getMD(...spliter(x))).then((parsedat) => {
-    adddom(parsedat.css);
-    target.outerHTML= parsedat.md;
-}).catch(err => console.error(err));
+    const parseHTML = text => (new DOMParser()).parseFromString(text, 'text/html'); //vervatim - complete
+    const getextbyres = res => res.text(); //+1 4 next
+    const parseData = x => getMD(...spliter(x)); //+2 4 next
+    const errRaise = err => console.error(err);
+    //url is src attribute, target is element
+    const innerHTMLasWebMD = (url, target) => fetch(url).then(getextbyres).then(parseHTML).then(parseData).then((parsedat) => {
+    adddom(parsedat.css); //dose this registering is works?
+    target.outerHTML= parsedat.md; //might be work
+}).catch(errRaise);
     const replaceWebMD = ob => innerHTMLasWebMD(ob.getAttribute("src"), ob);
 
     document.addEventListener("DOMContentLoaded", () => {
